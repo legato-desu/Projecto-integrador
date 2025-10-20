@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/*  Reseteo  */
 * {
     margin: 0;
     padding: 0;
@@ -16,14 +16,14 @@ body {
     color: #2E2E2E;
 }
 
-/* ===== CONTAINER GENERAL ===== */
+/*  Container general */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
 }
 
-/* ===== HEADER ===== */
+/*  Header */
 header {
     background-color: #0057B7;
     color: white;
@@ -62,7 +62,7 @@ nav a:hover {
     color: #FFA726;
 }
 
-/* ===== MENU HAMBURGUESA ===== */
+/* Menu hamburguesa */
 .menu-toggle {
     display: none;
     background: none;
@@ -72,7 +72,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* ===== SECCIONES ===== */
+/* Secciones */
 .section {
     padding: 60px 0;
 }
@@ -100,7 +100,7 @@ nav a:hover {
     padding-left: 40px;
 }
 
-/* ===== BOTONES ===== */
+/* Botones */
 .white-button a {
     text-decoration: none;
     display: inline-block;
@@ -141,7 +141,7 @@ button:hover {
     color: #fff;
 }
 
-/* ===== IMÁGENES ===== */
+/*  Imagenes  */
 .responsive-img {
     width: 100%;
     max-width: 600px;
@@ -151,7 +151,7 @@ button:hover {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== TARJETAS ===== */
+/*  Tarjetas  */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -177,7 +177,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* ===== FORMULARIO ===== */
+/*  Contacto  */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -209,7 +209,41 @@ button:hover {
     background-color: #00449E;
 }
 
-/* ===== FOOTER ===== */
+/*  Video  */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.video-container video,
+.video-container img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.download-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #0057B7;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #00449E;
+}
+
+/*  Footer  */
 footer {
     background-color: #0057B7;
     color: white;
@@ -219,7 +253,7 @@ footer {
     margin-top: 40px;
 }
 
-/* ===== ANIMACIONES AL HACER SCROLL ===== */
+/*  Animaciones al hacer scroll  */
 .animate {
     opacity: 0;
     transform: translateY(50px);
@@ -248,7 +282,7 @@ footer {
     opacity: 1;
 }
 
-/* ===== Grafico de justificacion =====*/
+/*  Grafico de justificacion  */
 
 .responsive-chart {
     width: 100%;
@@ -261,10 +295,7 @@ footer {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* ===== RESPONSIVE ===== */
+/*  Responsive */
 @media (max-width: 768px) {
     nav {
         display: none;

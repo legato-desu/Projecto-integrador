@@ -1,25 +1,24 @@
-// ===== Menú desplegable =====
+//  Menu desplegable
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-// Abre o cierra el menú al presionar el botón
+// Abre o cierra el menu al presionar el boton
 menuToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
 
-// Cierra el menú automáticamente al hacer clic en una opción
+// Cierra el men automaticamente al hacer clic en una opcion
 const navLinks = navMenu.querySelectorAll('a');
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    // Si el menú está abierto, lo cierra
     if (navMenu.classList.contains('active')) {
       navMenu.classList.remove('active');
     }
   });
 });
 
-// ===== Animaciones al hacer scroll =====
+//  Animaciones al hacer scroll 
 const animatedElements = document.querySelectorAll('.animate');
 
 function showOnScroll() {
@@ -40,7 +39,7 @@ window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
 
 
-// ===== Grafico de justificacion =====
+//  Grafico de justificacion 
 const ctx = document.getElementById('benefitsChart').getContext('2d');
 
 const benefitsChart = new Chart(ctx, {

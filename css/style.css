@@ -23,6 +23,78 @@ body {
     margin: auto;
 }
 
+/* === BARRA DE NAVEGACIÓN === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #0057B7;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* === MENÚ === */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FFA726;
+}
+
+/* === BOTONES DE AUTENTICACIÓN === */
+.auth-buttons {
+  display: center;
+  gap: 12px;
+}
+
+.auth-buttons a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-login i {
+  color: white;
+  transition: color 0.3s;
+}
+
+.btn-login:hover i {
+  color: #0057B7;
+}
+
+.btn-login {
+  color: white;
+  background: transparent;
+}
+
+.btn-login:hover {
+  background-color: white;
+  color: #0057B7;
+}
+
+
 /*  Header */
 header {
     background-color: #0057B7;
@@ -47,8 +119,12 @@ header {
 }
 
 nav {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #0057B7;
+  padding: 10px 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
 nav a {
@@ -72,9 +148,147 @@ nav a:hover {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+
+    .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .responsive-img {
+    max-width: 90%;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #0057B7;
+    padding: 10px 0;
+    border-top: 1px solid #003f91;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links .auth-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .auth-buttons a {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* === MODALES === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #0057B7;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* === FORMULARIO DEL MODAL === */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modal-form button {
+  background-color: #0057B7;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.modal-form button:hover {
+  background-color: #00449E;
+}
+
+.switch-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.switch-text a {
+  color: #0057B7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Secciones */
 .section {
-    padding: 60px 0;
+    padding: 20px;
 }
 
 .section.alt {
@@ -151,6 +365,13 @@ button:hover {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 /*  Tarjetas  */
 .cards {
     display: grid;
@@ -176,7 +397,6 @@ button:hover {
     color: #0057B7;
     margin-bottom: 10px;
 }
-
 
 /*  Video  */
 .video-container {
@@ -298,28 +518,32 @@ footer {
 
 /*  Responsive */
 @media (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        background-color: #0057B7;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+  nav {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #0057B7;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    nav a {
-        display: block;
-        padding: 10px;
-    }
+  nav.active {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-    nav.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    background-color: #0057B7;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
 }

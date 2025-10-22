@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MathOff</title>
     <link rel="icon" href="img/icono.ico">
+    <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -18,16 +19,55 @@
             <nav id="nav-menu">
                 <a href="#inicio">Inicio</a>
                 <a href="#problematica">Problemática</a>
-                <a href="#justificacion">Justificación</a>
+                <!-- <a href="#justificacion">Justificación</a>-->
                 <a href="#objetivos">Objetivos</a>
-                <a href="#antecedentes">Antecedentes</a>
-                <a href="#conclusion">Conclusión</a>
-                <a href="#demo">Demo</a>
+                <!--<a href="#antecedentes">Antecedentes</a>-->
+                <!--<a href="#conclusion">Conclusión</a>-->
+                <!--<a href="#demo">Demo</a>-->
                 <a href="#contacto">Contacto</a>
+
+                <div class="auth-buttons">
+                    <a href="#" class="btn-login" onclick="openModal('loginModal')">
+                        <i class='bx bxs-user'></i>
+                    </a>
+                </div>
 
             </nav>
         </div>
     </header>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Iniciar sesión</h2>
+            <form class="modal-form">
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="switch-text">
+                ¿No tienes cuenta?
+                <a href="#" onclick="switchModal('loginModal', 'registerModal')">Regístrate aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Registrarse</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Crear cuenta</button>
+            </form>
+            <p class="switch-text">
+                ¿Ya tienes una cuenta?
+                <a href="#" onclick="switchModal('registerModal', 'loginModal')">Inicia sesión</a>
+            </p>
+        </div>
+    </div>
 
     <main class="container">
         <section id="inicio" class="section animate">
@@ -46,9 +86,10 @@
                     target="_blank">
                     <i href="#">Leer mas</i>
                 </a>
-                <img src="img/ventana inicial.png" alt="Ventana inicial" class="responsive-img">
-                <img src="img/Ventana de graficos.png" alt="Ventana de graficos" class="responsive-img">
-
+                <div class="image-row">
+                    <img src="img/ventana inicial.png" alt="Ventana inicial" class="responsive-img">
+                    <img src="img/Ventana de graficos.png" alt="Ventana de graficos" class="responsive-img">
+                </div>
         </section>
 
         <section id="problematica" class="section alt animate">
@@ -131,7 +172,7 @@
             <img src="img/diagrama.png" alt="Diagrama de caso de uso" class="responsive-img">
         </section>
 
-       
+
         <section id="demo" class="section animate">
             <h2>Demo</h2>
             <div class="video-container">
@@ -143,9 +184,8 @@
                 <a href="tu-video.mp4" download class="download-btn">Descargar</a>
             </div>
 
-
         </section>
-         <section id="contacto" class="section alt animate">
+        <section id="contacto" class="section alt animate">
             <h2>Contacto</h2>
             <form class="contact-form">
                 <input type="text" placeholder="Nombre completo" required>
@@ -154,7 +194,7 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
-        
+
     </main>
 
     <footer>

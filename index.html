@@ -9,6 +9,9 @@
     <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.plot.ly/plotly-2.24.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.11.0/lib/browser/math.js"></script>
 </head>
 
 <body>
@@ -31,7 +34,6 @@
                         <i class='bx bxs-user'></i>
                     </a>
                 </div>
-
             </nav>
         </div>
     </header>
@@ -172,9 +174,41 @@
             <img src="img/diagrama.png" alt="Diagrama de caso de uso" class="responsive-img">
         </section>
 
-
         <section id="demo" class="section animate">
             <h2>Demo</h2>
+
+            <div id="graficadora-container">
+                <div class="graficadora-content">
+                    <p class="lead">Ingresa funciones en <code>x</code> (ej.: <code>sin(x)</code>,
+                        <code>x^2+2*x+1</code>, <code>exp(-x)</code>). Usa <code>^</code> para potencia.
+                    </p>
+
+                    <div class="controls">
+                        <button id="addBtn" class="btn">+ Añadir función</button>
+                        <button id="removeBtn" class="btn secondary">- Eliminar función</button>
+                        <button id="plotBtn" class="btn warn">Graficar</button>
+                        <button id="clearBtn" class="btn danger">Limpiar</button>
+                    </div>
+
+                    <div class="func-list" id="funcList">
+                        <!-- filas de funciones aquí -->
+                    </div>
+
+                    <div id="plot"></div>
+
+                    <div class="footer-demo">
+                        <div class="note">Funciones permitidas: <code>sin, cos, tan, exp, log, sqrt, abs, pi, e</code> y
+                            operadores + - * / ^</div>
+                        <div class="legend-sample">Ejemplos: <em>sin(x)</em>, <em>x^3 - 2*x</em></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section id="demo" class="section animate">
+            <h2>Demo</h2>
+
             <div class="video-container">
                 <video src="img/Test.mp4" autoplay loop muted playsinline></video>
             </div>
@@ -183,7 +217,7 @@
                 <h3>Descargar prototipo</h3>
                 <a href="tu-video.mp4" download class="download-btn">Descargar</a>
             </div>
-
+-->
         </section>
         <section id="contacto" class="section alt animate">
             <h2>Contacto</h2>
@@ -199,7 +233,8 @@
 
     <footer>
         <p>&copy; 2025 Aplicación Offline para Graficar Ecuaciones</p>
-        <p>Andres Julian Granja Andrade - Ivan David Miranda Castro</p>
+        <p>Andres Julian Granja Andrade</p>
+        <p>Ivan David Miranda Castro</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/scrips.js"></script>
